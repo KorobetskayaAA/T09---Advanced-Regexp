@@ -21,7 +21,7 @@ namespace RegularExpressions
         private void buttonFind_Click(object sender, EventArgs e)
         {
             var regex = new Regex(textBoxRegexp.Text,
-                RegexOptions.Multiline | RegexOptions.IgnoreCase);
+                RegexOptions.Multiline | (checkBoxCase.Checked ? RegexOptions.IgnoreCase : 0));
             var match = regex.Match(textBoxInput.Text,
                 textBoxInput.SelectionStart + textBoxInput.SelectionLength);
             
@@ -39,12 +39,12 @@ namespace RegularExpressions
 
         private void buttonFindAll_Click(object sender, EventArgs e)
         {
-            textBoxInput.Select(0, textBoxRegexp.Text.Length);
+            textBoxInput.Select(0, textBoxInput.Text.Length);
             textBoxInput.SelectionBackColor = Color.Transparent;
 
             var regex = new Regex(textBoxRegexp.Text,
-                RegexOptions.Multiline | RegexOptions.IgnoreCase);
-            var matches = regex.Matches(textBoxInput.Text, textBoxInput.SelectionStart);
+                RegexOptions.Multiline | (checkBoxCase.Checked ? RegexOptions.IgnoreCase : 0));
+            var matches = regex.Matches(textBoxInput.Text);
 
             labelMathchResult.Text = $"Найдено совпадений: {matches.Count}";
             foreach (Match match in matches)

@@ -35,6 +35,7 @@ namespace RegularExpressions
             this.buttonFind = new System.Windows.Forms.Button();
             this.buttonFindAll = new System.Windows.Forms.Button();
             this.labelMathchResult = new System.Windows.Forms.Label();
+            this.checkBoxCase = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // textBoxInput
@@ -88,11 +89,23 @@ namespace RegularExpressions
             this.labelMathchResult.Size = new System.Drawing.Size(0, 15);
             this.labelMathchResult.TabIndex = 4;
             // 
+            // checkBoxCase
+            // 
+            this.checkBoxCase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxCase.AutoSize = true;
+            this.checkBoxCase.Location = new System.Drawing.Point(645, 401);
+            this.checkBoxCase.Name = "checkBoxCase";
+            this.checkBoxCase.Size = new System.Drawing.Size(129, 19);
+            this.checkBoxCase.TabIndex = 5;
+            this.checkBoxCase.Text = "без учета регистра";
+            this.checkBoxCase.UseVisualStyleBackColor = true;
+            // 
             // FormRegExp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(786, 432);
+            this.Controls.Add(this.checkBoxCase);
             this.Controls.Add(this.labelMathchResult);
             this.Controls.Add(this.buttonFindAll);
             this.Controls.Add(this.buttonFind);
@@ -112,6 +125,7 @@ namespace RegularExpressions
         private System.Windows.Forms.Button buttonFind;
         private System.Windows.Forms.Button buttonFindAll;
         private System.Windows.Forms.Label labelMathchResult;
+        private System.Windows.Forms.CheckBox checkBoxCase;
     }
 }
 
